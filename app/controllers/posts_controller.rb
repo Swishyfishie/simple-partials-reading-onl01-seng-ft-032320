@@ -4,7 +4,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    # binding.pry
     @post = Post.find(params[:id])
+    @post.author_id = Author.last.id
+    @author = @post.author
   end
 
   def new
